@@ -1,0 +1,38 @@
+version: '3.5'
+
+services:
+  shcedule-test:
+    container_name: schedule-app-test
+    image: ${BACKEND_IMAGE_NAME}:${BACKEND_TEST_IMAGE_TAG}
+    restart: "no"
+    build: 
+      context: .
+      target: backend-test
+    environment:
+      - POSTGRES_TEST_URL=jdbc:postgresql://localhost:5432/schedule_test
+      - POSTGRES_ADMIN=postgres
+      - POSTGRES_ADMIN_PASSWORD=mysecretpassword
+    networks:
+      - backend
+    depends_on:
+      - postgres
+
+postgres:
+    image: postgres:15.1-alpine
+    container_name: Postgres15-test
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=schedule_test
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 30s
+      timeout: 60s
+      retries: 5
+      start_period: 80s  
+networks:
+  backend:
+    name: backend_netwok
