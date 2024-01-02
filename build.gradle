@@ -37,6 +37,8 @@ test {
     useJUnit()
     maxHeapSize = '1G'
     finalizedBy jacocoTestReport
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
 }
 if (System.getenv('$buildDir') != "") {
     stage.dependsOn(copyToLib)
