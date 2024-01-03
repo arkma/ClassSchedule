@@ -12,7 +12,7 @@ This repository contains the Class Schedule Project made by **Blue Team**.
 
 
 
-- React (version7)
+- React (version7_test)
 - Java (11)
 - Gradle (7)
 - Tomcat (9)
