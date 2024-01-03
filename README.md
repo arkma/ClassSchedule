@@ -10,6 +10,8 @@ This repository contains the Class Schedule Project made by **Blue Team**.
 
 ## Application Stack
 
+
+
 - React (version3)
 - Java (11)
 - Gradle (7)
