@@ -9,9 +9,9 @@ services:
       context: .
       target: backend-test
     environment:
-      - POSTGRES_TEST_URL=jdbc:postgresql://localhost:5432/schedule_test
-      - POSTGRES_ADMIN=postgres
-      - POSTGRES_ADMIN_PASSWORD=mysecretpassword
+      - POSTGRES_TEST_URL
+      - POSTGRES_ADMIN
+      - POSTGRES_ADMIN_PASSWORD
     networks:
       - backend
     depends_on:
@@ -22,9 +22,9 @@ services:
       container_name: Postgres15-test
       restart: always
       environment:
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=mysecretpassword
-        - POSTGRES_DB=schedule_test
+        - POSTGRES_USER
+        - POSTGRES_PASSWORD
+        - POSTGRES_DB
       expose:
         - 5432
       networks:
