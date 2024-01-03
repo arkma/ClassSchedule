@@ -5,9 +5,7 @@ This repository contains the Class Schedule Project made by **Blue Team**.
 
 
 ## Diagram 
-
-<img src="./app_diagram_with_backgroud.png" alt= “” width="" height="">
-
+![plot](./app_diagram_with_backgroud.png)
 ## Application Stack
 
 
